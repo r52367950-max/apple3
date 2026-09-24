@@ -6,7 +6,7 @@ distinct n-element sets (any ground set) with no r-sunflower (r distinct sets wi
 Priority target if the general case is out of reach: r = 3 ("three petals").
 
 Best known general upper bound: (C r log n)^n (Rao 2020; Bell–Chueluecha–Warnke 2021), after ALWZ 2019 ((C r^3 log n loglog n)^n).
-Best known lower bound for r=3: roughly 10^{n/2} (Abbott–Hanson–Sauer), small cases f_3(2)=6, f_3(3)=20, 39<=f_3(4)<=49 (Axante et al. 2609.06175, author claim).
+Best known lower bound for r=3: roughly 10^{n/2} (Abbott–Hanson–Sauer), small cases f_3(2)=6, f_3(3)=20, 54<=f_3(4)<=83 (Axante et al. 2609.06175; their '39<=f(3,4)<=49' is 3-uniform 4-petal). Max intersecting 3-SF: g(1..4)=1,3,10,27; L=sup g(a)^{1/(a-1)} >= sqrt10 (REVIEW_round1.md).
 
 ## Standard facts (proved, safe to use)
 * Core extraction: for R>1 choose K maximizing R^{|K|}|F_K| where F_K={A\K : K ⊆ A ∈ F}. Then F_K is R-spread:

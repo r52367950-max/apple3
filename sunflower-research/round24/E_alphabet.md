@@ -6,7 +6,7 @@ The model: W ⊆ [D]^n is **3-SF** if no three distinct words are, on every coor
 
 1. **The alphabet reduction is exactly the conjecture** (E1, PROVED, trivial but it fixes the target). "Every 3-SF W reduces to a 3-SF W' ⊆ [D_0]^n with |W'| ≥ c^n|W|" is equivalent to the conjecture. The allowed loss must be c^n: any loss of the form (D'/D)^{εn} is already too much (E1.2).
 2. **Merging is characterised exactly** (E2, PROVED). Merging a class S of symbols at coordinate i keeps W injective and 3-SF iff S is independent in an explicit *link graph* L_i. Uniformly random merging fails (E3, PROVED). This confirms and sharpens the coordinator's |E|=2 remark: pair collisions and triples with two 2+1 coordinates already force K ≳ n. For product families the expected number of new sunflowers is exponentially larger than |W|.
-3. **Data at n=3** (E4, CHECKED-NUMERICALLY, CP-SAT). M(3,3)=9, M(4,3)=12, M(5,3)=12, and M(6,3) ∈ [12,14] (last line of this file). So alphabet 3 loses a constant factor already at n=3. In the extremal families every link graph L_i is **complete**, so no merge is possible at all. Also 120 of the 220 triples are "near-sunflowers" (exactly one 2+1 coordinate).
+3. **Data at n=3** (E4, CHECKED-NUMERICALLY, CP-SAT). M(3,3)=9, M(4,3)=12, M(5,3)=12, M(6,3) ∈ [12,13], and M(4,4) ≥ 26 > 20 = M(3,4). So alphabet 3 loses a constant factor already at n=3. In the extremal families every link graph L_i is **complete**, so no merge is possible at all. Also 120 of the 220 triples are "near-sunflowers" (exactly one 2+1 coordinate).
 4. **Weighted / light-tail tensor bound** (E5, PROVED). For every 3-SF W, all weights q_i:[D]→[0,1] and all t_i ∈ (0,1):
    Σ_{x∈W} Π_i q_i(x_i) ≤ Π_i t_i^{-2/3}(1 + t_i Σ_a q_i(a) + t_i²).
    Corollary: log|W| ≤ n·log β(D_0) + Σ_i E[log⁺(1/(D_0 p_i(X_i)))] for every D_0, where X is uniform on W and p_i is the law of X_i. So only the "light-symbol surprisal" costs full price. A counterexample to the conjecture would have to carry almost all of its entropy in symbols of probability ≪ 1/D_0, for every fixed D_0.
@@ -103,10 +103,11 @@ Each such triple is either a pair collision (two words equal, the third merged o
 
 | n | D=3 | D=4 | D=5 | D=6 |
 |---|---|---|---|---|
-| 3 | 9 (cap set) | 12 | 12 | ≥12, ≤14 (1200 s run; see end of file) |
+| 3 | 9 (cap set) | 12 | 12 | 12 ≤ M ≤ 13 (1200 s, not closed) |
+| 4 | 20 (cap set, known) | ≥ 26, ≤ 55 (900 s, not closed; witness in `E_alphabet_work/d4n4.out`, 3-SF re-verified) | – | – |
 
 - M(D,2) = 4 for D ≥ 2. The proof is König: in the bipartite graph of words, max degree ≤ 2 and matching number ≤ 2.
-- So the alphabet stabilises at D = 2 for n = 2, but D*(3) ≥ 4. Four symbols per coordinate are needed to reach 12 > 9. Losslessly, "every family merges to alphabet 3" is false at n = 3. With c^n loss it is not contradicted.
+- So the alphabet stabilises at D = 2 for n = 2, but D*(3) ≥ 4. Four symbols per coordinate are needed to reach 12 > 9. Losslessly, "every family merges to alphabet 3" is false at n = 3. With c^n loss it is not contradicted. At n=4, 26/20 = 1.3, so the per-coordinate loss ratio (26/20)^{1/4} ≈ 1.07 for going from D=4 to D=3 is still small.
 - Witness for D = 4: {000,012,111,113,122,132,200,212,301,303,320,330}.
 
 ---
